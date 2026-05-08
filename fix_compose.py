@@ -1,4 +1,4 @@
-services:
+content = """services:
 
   postgres:
     image: postgres:15-alpine
@@ -169,3 +169,8 @@ volumes:
 networks:
   hopital_net:
     driver: bridge
+"""
+
+with open('docker-compose.yml', 'w', encoding='utf-8', newline='\n') as f:
+    f.write(content)
+print('docker-compose.yml recree avec succes !')

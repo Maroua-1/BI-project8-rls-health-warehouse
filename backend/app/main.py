@@ -154,7 +154,7 @@ async def get_patient(patient_id: int, request: Request, user: dict = Depends(ve
         raise HTTPException(status_code=403, detail='Acces interdit aux chercheurs')
     role_pg = ROLE_MAPPING[user['role']]
     vue     = VUE_MAPPING[role_pg]
-    data    = await query_as_role(role_pg, f'SELECT * FROM {vue} WHERE patient_id = \', patient_id)
+    data    = await query_as_role(role_pg, f'SELECT * FROM {vue} WHERE patient_id = %s', [patient_id])
     if not data:
         raise HTTPException(status_code=404, detail='Patient non trouve')
     consultations = await query_as_role(role_pg, '''
@@ -244,3 +244,4 @@ async def get_audit(request: Request, page: int=1, limit: int=100, user: dict = 
         'from':(page-1)*limit,'size':limit
     })
     return {'total':res['hits']['total']['value'],'data':[h['_source'] for h in res['hits']['hits']]}
+
