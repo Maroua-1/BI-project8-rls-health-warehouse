@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-01T03:38:25.003704",
+  "hopital": "CHU Ibn Sina Rabat",
+  "modele": "Isolation Forest",
+  "total": 3,
+  "anomalies": 1,
+  "utilisateurs": [
+    {
+      "username": "marie.admin",
+      "role": "administratif",
+      "nb_acces": 10,
+      "patients_moy": 50.0,
+      "heure_moy": 2.0,
+      "ratio_nuit": 1.0,
+      "duree_moy": 500.0,
+      "acces_par_jour": 10.0,
+      "nb_ips": 1,
+      "anomalie": true,
+      "score_risque": 100,
+      "raisons": [
+        "Acces nocturnes : 100%"
+      ]
+    },
+    {
+      "username": "dr.benali",
+      "role": "medecin",
+      "nb_acces": 11,
+      "patients_moy": 50.0,
+      "heure_moy": 3.5,
+      "ratio_nuit": 0.909,
+      "duree_moy": 500.0,
+      "acces_par_jour": 0.5,
+      "nb_ips": 1,
+      "anomalie": false,
+      "score_risque": 0,
+      "raisons": [
+        "Acces nocturnes : 90%"
+      ]
+    },
+    {
+      "username": "prof.rhanem",
+      "role": "chercheur",
+      "nb_acces": 11,
+      "patients_moy": 50.0,
+      "heure_moy": 3.5,
+      "ratio_nuit": 0.909,
+      "duree_moy": 500.0,
+      "acces_par_jour": 0.5,
+      "nb_ips": 1,
+      "anomalie": false,
+      "score_risque": 0,
+      "raisons": [
+        "Acces nocturnes : 90%"
+      ]
+    }
+  ]
+}
